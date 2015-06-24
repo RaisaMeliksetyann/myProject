@@ -1,0 +1,456 @@
+﻿body {
+    width: 100%;
+    margin: auto;
+    font-family: Arial, Helvetica, sans-serif;
+
+    -moz-user-select: none; 
+    -webkit-user-select: none; 
+    -ms-user-select:none; 
+    user-select:none;
+}
+.clear_floating {
+    clear: both;
+}
+.verticalAlign {
+    position: relative;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+
+div.MobLivGameWrap {
+    width: 100%;
+    height: 100%;
+    background: #fff;
+    overflow: auto;
+    /*position: relative;
+    width: 100%;
+    height: auto;
+    min-width: 768px;
+    min-height: 480px;
+    margin: 0 auto;
+    background: #fff;
+    overflow: auto;*/
+}
+.LiveGamesLobbyHolder {
+    width: 100%;
+    height: 100%;
+    /*position: absolute;
+    width: 80%;
+    height: 85%;
+    min-height: 410px;
+    left: 10%;
+    bottom: 0;
+    z-index: 20;*/
+}
+/*------------------------Live Games Lobby------------------------*/
+.LiveGamesLobbyWrap {
+    width: 100%;
+    height: 100%;
+    min-width: 600px;
+    min-height: 410px;
+    background: url("/Content/Images/Lobby/bg1.png") no-repeat;
+    background-size: 100% 100%;
+}
+.LiveGamesLobbyHerader {
+    width: 96%;
+    height: 19%;
+    padding: 0 2%;
+    background: rgba(0,0,0,.6);
+    color: #fff;
+}
+.headerBorder {
+    height: 5px;
+    background: #000;
+}
+.lobbyHeadTop {
+    height: 50%;
+    font-size: 2.5em;
+    line-height: 50%;
+}
+.lobbyTitile {
+    float: left;
+    width: 80%;
+}
+.LGLobbyLogo {
+    float: right;
+    width: 15%;
+    height: 50%;
+}
+.LGLobbyLogo img {
+    float: right;
+    max-width: 100%;
+    width: 100%;
+    height: auto;
+}
+
+.LgLobbyGamesButs {
+    width: 100%;
+    height: 50%;
+}
+.LGLobbyGameSelector {
+    display: inline-block;
+    padding: 3px 10px;
+    margin: 0 15px 0 0;
+    text-align: center;
+    font-size: 1.1em;
+    border-radius: 5px;
+}
+.selectedSelector {
+    background: #EA1152;
+}
+.LGLobbyGameSelector:hover {
+    background: #EA1152;
+    cursor: pointer;
+}
+.LGLobbyTablesViewport {
+    width: 96%;
+    height: 68%;
+    padding: 1% 2%;
+}
+.LGLobbyTablesContainer::-webkit-scrollbar {
+    width: 10px;
+}
+.LGLobbyTablesContainer::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 10px rgba(0,0,0,0.8);
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -o-border-radius: 5px;
+    -ms-border-radius: 5px;
+} 
+.LGLobbyTablesContainer::-webkit-scrollbar-thumb {
+     background-color: #D4D4D4;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -o-border-radius: 5px;
+    -ms-border-radius: 5px;
+}
+.LGLobbyTablesContainer {
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+}
+.LiveGameLobbyTable0 {
+    position: relative;
+    display: block;
+    float: left;
+    width: 300px;
+    height: 210px;
+    background: #2C3E50;
+    margin: 0 20px 15px 0;
+    overflow: hidden;
+}
+.lobHiddenTbl {
+    display: none !important;
+}
+.lobbyTableHeader {
+    width: 100%;
+    height: auto;
+    color: #fff;
+    font-size: 1.2em;
+}
+.lobbyTableName {
+    float: left;
+    padding: 5px 0 0 10px;
+}
+.lobbyTableLanguage {
+    float: right;
+    margin: 5px 10px 0 0;
+}
+.lobbyTableInfo {
+    display: inline-block;
+    height: 85px;
+    margin-left: 10px;
+    color: #fff;
+}
+.lobbyInfoRow {
+}
+.lobbyInfoLabels {
+    font-size: 0.7em;
+}
+.lobbyDealerName {
+    font-size: 1em;
+    font-weight: bold;
+}
+.lobbyPlayers {
+    font-size: 1em;
+    font-weight: bold;
+}
+.lobbyLimits {
+    font-size: 1em;
+    font-weight: bold;
+    color: #f19a12;
+}
+
+.lobbyTableButtons {
+    position: relative;
+    margin: 10px 0 0 10px;
+    z-index: 5;
+}
+.lobbyTablePlay {
+    display: inline-block;
+    padding: 4px 20px;
+    background: #f19a12;
+    opacity: 1;
+    text-align: center;
+    color: #fff;
+    font-size: 1em;
+    font-weight: bold;
+    text-transform: uppercase;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+}
+.lobbyTableView {
+    display: inline-block;
+    padding: 4px 20px;
+    background: #608C52;
+    opacity: 1;
+    text-align: center;
+    color: #fff;
+    font-size: 1em;
+    font-weight: bold;
+    text-transform: uppercase;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+}
+.lobbyTablePlayOffline {
+    display: inline-block;
+    padding: 4px 20px;
+    background: #c02625;
+    opacity: 1;
+    text-align: center;
+    color: #fff;
+    font-size: 1em;
+    font-weight: bold;
+    text-transform: uppercase;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+}
+.lobbyTablePlayOffline:hover {
+    cursor: default !important;
+    opacity: 1 !important;
+}
+.lobbyTableWatch {
+    display: inline-block;
+    width: 15px;
+    padding: 4px 5px;
+    margin-left: 5px;
+    background: url("/Content/Images/Lobby/watch.png") no-repeat;
+    opacity: 1;
+    text-align: center;
+    color: #fff;
+    font-size: 1em;
+    font-weight: bold;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+}
+.lobbyTablePlay:hover, .lobbyTableView:hover {
+    cursor: pointer;
+    opacity: 0.8;
+}
+.lobbyTableWatch:hover {
+    cursor: pointer;
+    opacity: 0.8;
+}
+.lobbyTableStatistics {
+    position: relative;
+    width: 100%;
+    height: 50px;
+    margin: 5px 0 0 0;
+    background: #000;
+}
+.LiveGameLobbyTable101 .lobbyTableStatistics,
+.LiveGameLobbyTable104 .lobbyTableStatistics, 
+.LiveGameLobbyTable105 .lobbyTableStatistics,
+.LiveGameLobbyTable106 .lobbyTableStatistics{
+    background: transparent !important;
+}
+.lobbyStatisticsLabel {
+    font-size: 0.7em;
+    color: #fff;
+    margin: 0 0 0 10px;
+}
+.lobbyStatistics {
+    position: absolute;
+    margin-left: 5px;
+    z-index: 1;
+}
+.lobbyStatistics span{
+    display: inline-block;
+    width: 23px;
+    height: 20px;
+    margin: 2px 0 0 9px;
+    padding: 3px 0 0 0;
+    text-align: center;
+    border-radius: 5px;
+    font-weight: bold;
+    border: 1px solid #fff;
+    box-shadow: 0 0 2px #fff;
+}
+.lobbyBJStatisticBust {
+    background: #C02625;
+    color: #fff;
+}
+.lobbyBJStatisticBJ {
+    background: #6B9D53;
+    color: #fff;
+}
+.lobbyBJStatisticNat {
+    background: #E0E0E0;
+    color: #000;
+}
+
+.lobbyRLTStatisticRed {
+    background: #C02625;
+    color: #fff;
+}
+.lobbyRLTStatisticBlack {
+    background: #1D1E23;
+    color: #fff;
+}
+.lobbyRLTStatisticNull {
+    background: #6B9D53;
+    color: #fff;
+}
+.lobbyBcrStat0 {
+    background: #6B9D53;
+    color: #fff;
+}
+.lobbyBcrStat1 {
+    background: #28597A;
+    color: #fff;
+}
+.lobbyBcrStat2 {
+    background: #C02625;
+    color: #fff;
+}
+
+
+.lobbyStatisticsLast {
+    width: 30px !important;
+    height: 27px !important;
+    margin-top: 0 !important;
+    font-size: 1.3em;
+}
+.lobbyDealerPhoto {
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    left: 130px;
+    overflow: hidden;
+    z-index: 0;
+}
+.lobbyDealerPhoto img {
+    float: left;
+    max-width: 100%;
+    /*max-height: 100%;*/
+    height: auto;
+}
+
+
+
+
+/*-------------Live Games Lobby Footer-------------*/
+.LGLobbyFooter {
+    width: 96%;
+    height: 10%;
+    padding: 0 2%;
+    background: #000;
+}
+.LGLobbyFootLeftButtons {
+    float: left;
+    font-size: 1.2em;
+    text-align: center;
+    border-radius: 5px;
+    cursor: pointer;
+}
+#lobbyChashier {
+    padding: 3px 20px;
+    font-weight: bold;
+    background: #D4D4D4;
+}
+#lobbyBalanceLabel {
+    margin: 0 0 0 2%;
+    padding: 3px 5px;
+    color: #D4D4D4;
+}
+#lobbyBalance {
+    margin: 0 0 0 5px;
+    padding: 1px 10px;
+    border: 2px solid #d4d4d4;
+    color: #D4D4D4;
+}
+.LGLobbyFootRightButtons {
+    float: right;
+    margin-right: 1%;
+    cursor: pointer;
+}
+.LGLobbyFooter img {
+    max-width: 100%;
+    max-height: 100%;
+    height: auto;
+}
+
+
+
+
+
+
+/* Smartphones (portrait and landscape) ----------- */
+@media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
+/* Styles */
+}
+
+/* Smartphones (landscape) ----------- */
+@media only screen and (min-width : 321px) {
+/* Styles */
+}
+
+/* Smartphones (portrait) ----------- */
+@media only screen and (max-width : 320px) {
+/* Styles */
+}
+
+/* iPads (portrait and landscape) ----------- */
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) {
+/* Styles */
+}
+
+/* iPads (landscape) ----------- */
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : landscape) {
+/* Styles */
+}
+
+/* iPads (portrait) ----------- */
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : portrait) {
+/* Styles */
+}
+
+/* Desktops and laptops ----------- */
+@media only screen and (min-width : 1224px) {
+/* Styles */
+}
+
+/* Large screens ----------- */
+@media only screen and (min-width : 1824px) {
+/* Styles */
+}
+
+/* iPhone 4 ----------- */
+@media
+only screen and (-webkit-min-device-pixel-ratio : 1.5),only screen and (min-device-pixel-ratio : 1.5) {
+/* Styles */
+}

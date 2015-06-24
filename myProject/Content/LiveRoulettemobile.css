@@ -1,0 +1,782 @@
+﻿body {
+    font-family: Arial, "Tahoma";
+    margin: 0;
+    padding: 0;
+    background: black !important;
+    -moz-user-select: none; 
+    -webkit-user-select: none; 
+    -ms-user-select:none; 
+    user-select:none;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+    -webkit-tap-highlight-color: transparent;
+}
+img 
+{
+    width: 100%;
+    height: auto;
+}
+*{-webkit-transition-property: all;}
+
+@font-face {
+  font-family: 'OpenSans-Regular';
+    src: url('/Content/fonts/FontsMobile/OpenSans-Regular.ttf') format('truetype'); 
+}
+@font-face {
+  font-family: 'OpenSans-Light';
+    src: url('/Content/fonts/FontsMobile/OpenSans-Light.ttf') format('truetype'); 
+}
+@font-face {
+  font-family: 'OpenSans-Bold';
+    src: url('/Content/fonts/FontsMobile/OpenSans-Bold.ttf') format('truetype'); 
+}
+
+#RoulettegameWrapper {
+    position: relative;
+    width: 2048px;
+    height: 1536px;
+    margin: 0 auto;
+    overflow: hidden;
+    color:white;
+    font-family: "OpenSans-Regular";
+    background: url("/Content/MobilerouletteImages/roulette_tablet_v2_scr1.png") 100% 0% /cover no-repeat;
+} 
+#layout {
+    height: 52%;
+    background: url("/Content/MobilerouletteImages/layout_green.png") 100% 0% /cover no-repeat;
+    -webkit-perspective: 700px;  
+    -ms-perspective: 700px;  
+    perspective: 700px;
+
+}
+
+#boradsContainer {
+    position: relative;
+    height: 87%;
+    -webkit-transform: rotateX(13deg);
+    transform: rotateX(13deg);
+}
+
+#boradsContainer table {
+    border-collapse: separate !important;
+    border-spacing: 0;
+    margin: 0 auto;
+    font-family: "OpenSans-Bold";
+    font-size: 38pt;
+    color: white;
+    text-align: center;
+}
+#board {
+    width: 92%;
+    height: 56%;
+}
+#second_board{
+    width: 79%;
+    height: 34%;
+    table-layout: fixed;
+}
+#board td{
+    width: 7%;
+    border-radius: 20px;
+}
+.nmbCont {
+    position: relative;
+    height: 100%;
+    padding-top: 10%;
+    border-radius: 20px;
+    border: 10px solid transparent;
+}
+
+#board td {
+    border: 5px solid #A1BAAD;
+}
+#board tr:first-child td{
+    border-top-width: 10px !important;
+}
+#board td:first-child
+{
+    border-left-width: 10px !important;
+}
+#board td:last-child {
+    border-right-width: 10px !important;
+}
+#board tr:last-child td:last-child {
+    border-bottom-width: 10px !important;
+}
+
+#second_board td{
+    position: relative;
+    border: 5px solid #A1BAAD;
+    border-radius: 20px;
+}
+#second_board tr:last-child td
+{
+    border-bottom-width: 10px !important;
+}
+#second_board td:last-child
+{
+    border-right-width: 10px !important;
+}
+#second_board td:first-child
+{
+    border-left-width: 10px !important;
+}
+.active
+{ 
+    border:10px solid #FB9900!important;
+    border-radius: 15px !important;
+    /*box-shadow: inset 0 0 10px #000000;*/
+}
+
+#tablesBackground {
+    width: 78%;
+    height: 55%;
+    background: #A1BAAD;
+    position: absolute;
+    top: 12px;
+    left: 11%;
+    z-index: -1;
+}
+
+
+ #boardTd0{
+    background: url("/Content/MobilerouletteImages/0_board.png") 0 -7px no-repeat;
+    background-size: 135% 105%;
+    background-position-x: 1px;
+    background-position-x: -9px;
+    border: 1px solid transparent !important;
+    border-radius: 0 !important;
+}
+ #betId_0 {
+     height: auto;
+ }
+ #betId_0.active {
+     height: 100%;
+    background: url("/Content/MobilerouletteImages/betId0Active.png") 0 10px no-repeat;
+    background-size: 90% 96%;
+    background-position-x: 14px;
+    border: none !important;
+    border-radius: 0 !important;
+ }
+.red{background:#961B12}
+.black{ background: #021411;}
+.transparent{ background: transparent !important;}
+
+
+/***************************Roulette Net Styles***************************/
+
+#net {
+    position: absolute;
+    width: 80%;
+    height: 55%;
+    top: 2%;
+    left: 9.5%;
+    visibility: hidden;
+}
+.blueLinesRow {
+    height: 23%; 
+}
+.yellowLinesRow {
+    height: 12%; 
+}
+ #net .first_section{
+    position: relative;
+    width: 2.9%;
+    height: 100%;
+    margin-right: 5.2%;
+    float: left;
+    visibility: visible;
+     /*background: blue;*/ 
+}
+ #net .circle {
+    position: relative;
+    width: 2.9%;
+    height: 100%;
+    float: left;
+    visibility: visible;
+     /*background: yellow;*/ 
+}
+#net .second_section {
+    position: relative;
+    width: 5.2%;
+    height:100%;
+    float: left;
+    visibility: visible;
+    /*background: aqua;*/
+}
+.chip_circle {
+    position: absolute;
+    width: 80px;
+    height: 63px;
+    padding-top: 17px;
+    font-size: 30px;
+    font-weight: bold;
+    text-align: center;
+    background: url(/Content/MobilerouletteImages/Chips/chip1.png) no-repeat;
+    background-size: 100%;
+}
+#board td .chip_circle {
+    top: 11px;
+    left: 13px;
+}
+#betId_0 .chip_circle {
+    top: -30px !important;
+    left: 20px !important;
+}
+#betId_0.active .chip_circle {
+    top: 155px !important;
+    left: 30px !important;
+}
+
+.circle .chip_circle {
+    top: -17px;
+    left: -15px;
+}
+
+.first_section .chip_circle {
+    top: 15px;
+    left: -15px;
+}
+.second_section .chip_circle {
+    top: -17px;
+    left: 3px;
+}
+#betId_148  .chip_circle, 
+#betId_149  .chip_circle,
+#betId_150  .chip_circle {
+    top: 14%;
+    right: 5%;
+}
+#betId_151 .chip_circle,
+#betId_152 .chip_circle,
+#betId_153 .chip_circle,
+#betId_154 .chip_circle,
+#betId_155 .chip_circle,
+#betId_156 .chip_circle {
+    top: 14%;
+    left: 35%;
+}
+ /****************************Footer*************************/
+ #footer_row {
+    height: 13%;
+}
+
+ .footerParts {
+     width: 37%;
+     height: 100%;
+     padding: 0 1%;
+     background: #212121;
+     background: rgba(4, 12, 8, 0.7);
+ }
+ #footerLeftPart {
+     float: left;
+     border-top-right-radius: 20px;
+ }
+ #footerRightPart {
+     float: right;
+     border-top-left-radius: 20px;
+ }
+
+ #btn_cashier {
+    float: left;
+    width: 32%;
+    height: 62%;
+    margin-top: 2%;
+    padding-top: 1%;
+    color: black;
+     font-family: "OpenSans-Bold";
+    font-size: 34pt;
+    text-align: center;
+    border-radius: 10px;
+    background: #d6d6d6;
+}
+#btn_cashier:hover {
+    cursor: pointer;
+    background: #ababab;
+}
+.bettingIcon {
+    float: right;
+    width: 9.5%;
+    height: 70%;
+    margin-top: 2%;
+    cursor: pointer;
+    margin-left: 2%;
+}
+#undo {
+    background: url("/Content/MobilerouletteImages/undo_icon.png") no-repeat;
+}
+#undo:hover {
+    background: url("/Content/MobilerouletteImages/undo_icon_pressed.png") no-repeat;
+    cursor: pointer;
+}
+#cancel {
+    background: url("/Content/MobilerouletteImages/cancel_icon.png") no-repeat;
+}
+#cancel:hover {
+    background: url("/Content/MobilerouletteImages/cancel_icon_pressed.png") no-repeat;
+    cursor: pointer;
+}
+
+#rebet{
+    float: right;
+    width: 32%;
+    height: 62%;
+    margin-top: 2%;
+    padding-top: 1%;
+    background: url("/Content/MobilerouletteImages/rebet_icon.png") 12% no-repeat #2980b9;
+    color: #fff;
+    font-size: 35pt;
+    text-align: center;
+    border-radius: 10px;
+}
+#rebet:hover {
+    background: url("/Content/MobilerouletteImages/rebet_icon.png") 12% no-repeat #216694;
+    cursor:pointer;
+}
+.functName {
+    font-family: "OpenSans-Regular";
+    margin-left: 20%;
+}
+.layoutsButs {
+    width: 8.3%;
+    height: 92.3%;
+}
+#classicLayBut {
+    float: left;
+    margin-left: 2%;
+    background: url("/Content/MobilerouletteImages/classic_mode_icon_inactive.png") no-repeat;
+    background-size: 100%;
+}
+#classicLayBut:hover {
+    background: url("/Content/MobilerouletteImages/classic_mode_icon.png") no-repeat !important;
+    cursor: pointer;
+}
+.activeClassLay {
+    background: url("/Content/MobilerouletteImages/classic_mode_icon.png") no-repeat !important;
+}
+#racetrackLayBut {
+    float: right;
+    margin-right: 2%;
+    background: url("/Content/MobilerouletteImages/racetrack_mode_icon_inactive.png") no-repeat;
+    background-size: 100%;
+}
+#racetrackLayBut:hover {
+    background: url("/Content/MobilerouletteImages/racetrack_mode_icon.png") no-repeat !important;
+    cursor: pointer;
+}
+.activeRaceLay {
+    background: url("/Content/MobilerouletteImages/racetrack_mode_icon.png") no-repeat !important;
+}
+
+.settingsIcon {
+    float: right;
+    width: 9.5%;
+    height: 70%;
+    margin-top: 2%;
+    cursor: pointer;
+    margin-left: 2%;
+}
+#settings {
+    background: url("/Content/MobilerouletteImages/settings_icon.png") no-repeat;
+}
+#settings:hover {
+    background: url("/Content/MobilerouletteImages/settings_icon_pressed.png") no-repeat;
+    cursor: pointer;
+}
+#info {
+    background: url("/Content/MobilerouletteImages/info_icon.png") no-repeat;
+}
+#info:hover {
+    background: url("/Content/MobilerouletteImages/info_icon_pressed.png") no-repeat;
+    cursor: pointer;
+}
+#history {
+    background: url("/Content/MobilerouletteImages/history_icon.png") no-repeat;
+}
+#history:hover {
+    background: url("/Content/MobilerouletteImages/history_icon_pressed.png") no-repeat;
+    cursor: pointer;
+}
+
+#chips_container {
+    float: left;
+    width: 53%;
+    height: 100%;
+    margin-left: 7%;
+}
+.flexslider {
+    background: none !important;
+    border: none !important;
+    height: 135%;
+}
+.flex-viewport {
+    padding-top: 6%;
+    margin-top: -9%;
+    height: 100%;
+}
+ul.slides {
+    height: 100%;
+}
+.flexslider .slides > li {
+    display: none;
+    -webkit-backface-visibility: hidden;
+    height: 100%;
+}
+.chip_amount {
+    width: 121px;
+    height: 91px;
+    font-family: "OpenSans-bold";
+    font-size: 32pt;
+    color: #ffffff;
+    text-align: center;
+    position: absolute;
+    padding-top: 30px;
+    background-size: 100%;
+ }
+.chipCol0,
+.chipCol11 {
+    background: url("/Content/MobilerouletteImages/Chips/chip0.png") no-repeat;
+    background-size: 100%;
+}
+.chipCol1 {
+    background: url("/Content/MobilerouletteImages/Chips/chip1.png") no-repeat;
+    background-size: 100%;
+}
+.chipCol2 {
+    background: url("/Content/MobilerouletteImages/Chips/chip2.png") no-repeat;
+    background-size: 100%;
+}
+.chipCol3 {
+    background: url("/Content/MobilerouletteImages/Chips/chip3.png") no-repeat;
+    background-size: 100%;
+}
+.chipCol5 {
+    background: url("/Content/MobilerouletteImages/Chips/chip5.png") no-repeat;
+    background-size: 100%;
+}
+.chipCol4 {
+    background: url("/Content/MobilerouletteImages/Chips/chip4.png") no-repeat;
+    background-size: 100%;
+}
+.chipCol6 {
+    background: url("/Content/MobilerouletteImages/Chips/chip6.png") no-repeat;
+    background-size: 100%;
+}
+.chipCol7 {
+    background: url("/Content/MobilerouletteImages/Chips/chip7.png") no-repeat;
+    background-size: 100%;
+}
+.chipCol8 {
+    background: url("/Content/MobilerouletteImages/Chips/chip8.png") no-repeat;
+    background-size: 100%;
+}
+.chipCol9 {
+    background: url("/Content/MobilerouletteImages/Chips/chip9.png") no-repeat;
+    background-size: 100%;
+}
+.chipCol10 {
+    background: url("/Content/MobilerouletteImages/Chips/chip10.png") no-repeat;
+    background-size: 100%;
+}
+
+
+.flexslider ol {
+    visibility: hidden;
+}
+.flex-direction-nav a {
+     opacity: 1 !important;
+}
+.flex-direction-nav .flex-next {
+    right: -50px;
+    text-align: right;
+    width: 30px;
+    height: 50px;
+    background: url("/Content/MobilerouletteImages/chip_right_icon.png") no-repeat;
+}
+.flex-direction-nav .flex-prev {
+    width: 30px;
+    height: 50px;
+    background: url("/Content/MobilerouletteImages/chip_left_icon.png") no-repeat;
+}
+   
+.flex-direction-nav .flex-next {
+    right: -7% !important;
+    margin-top: -1%;
+}
+.flex-direction-nav .flex-prev {
+    left: -10% !important;
+    margin-top: -1%;
+}
+ .activeChip {margin-top: -0.4%}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#sign_in_but_container a{
+    color: #F1F1F1;
+
+    
+}
+
+#btn_sign_in {
+    width: 12%;
+     margin-top: 0.3%; 
+    /* margin-left: 4%; */
+    /* height: 136%; */
+    color: black;
+    font-size: 24px;
+    font-weight: bold;
+    /* margin-left: 73px; */
+    text-align: center;
+    padding-top: 0.3%;
+    border-radius: 6px;
+    background: #f1c40f;
+    border:2px solid #f1c40f;
+    float: left;
+}
+
+ 
+ 
+
+ 
+
+ 
+  #text{ font-size: 17px}
+ 
+   
+   
+   #sign_in_but_container #btn_sign_in:hover{border: 2px solid transparent;}
+   
+
+/********************************Roulette Diagram Statistics***********************************/
+#statisticsRlt {
+    position: absolute;
+    top: 1%;
+    right: 0;
+    background: #008000;
+    padding: 0.2% 0.5%;
+    border-radius: 5px;
+    cursor: pointer;
+}
+#statisticsHolder {
+    display: none;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 30%;
+    height: 50%;
+    /*width: 366px;
+    height: 323px;*/
+    background: #191919;
+    color: #fff;
+    z-index: 10; 
+}
+#diagramsHolder {
+    position: relative;
+    /*background: url(/Content/MobilerouletteImages/diagr.png) 0 no-repeat;*/
+    width: 100%;
+    height: 100%;
+    padding: 1% 5%;
+}
+.statTitle {
+    padding: 4% 0;
+    text-align: center;
+    font-size: 170%;
+}
+#hotColdDbl {
+    height: 20%;
+}
+#hotColdDbl table {
+    width: 100%;
+    table-layout: fixed;
+    text-align: left;
+
+}
+#hotColdDbl img {
+    width: auto;
+    height: auto;
+}
+
+.statNumb {
+    position: relative;
+    display: inline-block;
+    width: 25%;
+    margin-top: 3%;
+    font-size: 130%;
+    text-align: center;
+    border: 2px solid #ffffff;
+    border-radius: 5px;
+}
+.statistCount {
+    position: absolute;
+    width: 55%;
+    height: 55%;
+    bottom: -25%;
+    right: -20%;
+    font-size: 10px;
+    text-align: center;
+    color: #000;
+    background: #fff;
+    border-radius: 50%;
+}
+.redNmb {
+    background: #ff0000;
+}
+.greenNmb {
+    background: #79A764;
+}
+.blackNmb {
+    background: #1C1E22;
+}
+
+.diagRow {
+    width: 100%;
+    height: 7%;
+    margin: 2% 0 0 0;
+    font-size: 80%;
+    font-weight: bold;
+    background: #79A764;
+    border: 2px solid #fff;
+    border-radius: 5px;
+} 
+.rawFirstPart {
+    height: 100%;
+    min-width: 15%;
+    max-width: 85%;
+    float: left;
+}
+.rawSecondtPart {
+    float: right;
+    min-width: 15%;
+    max-width: 85%;
+    height: 100%;
+}
+.rawFirstPart .rowNamePerc {
+    float: left;
+    padding: 2px;
+}
+.rawSecondtPart .rowNamePerc {
+    float: right;
+    padding: 2px;
+}
+.rawFirstPart .rowValuePerc {
+    float: right;
+    padding: 2px;
+}
+.rawSecondtPart .rowValuePerc {
+    float: left;
+    padding: 2px;
+}
+
+#redPercent {
+    background: #C02524;
+}
+#blackPercent {
+    background: #1C1E22;
+}
+
+#evenPercent {
+    background: #D1D1D1;
+    color: #000;
+}
+#oddPercent {
+    background: #1C1E22;
+}
+
+#frstHlfPercent {
+    background: #D1D1D1;
+    color: #000;
+}
+#ScndHlfPercent {
+    background: #1C1E22;
+}
+
+.dozenColumnsRaw {
+    width: 100%;
+    height: 7%;
+    margin:  0 0 2% 0;
+    font-size: 80%;
+    font-weight: bold;
+}
+#dozensTtl {
+    float: left;
+    margin: 2% 0 0 2%;
+}
+#columnsTtl {
+    float: right;
+    margin: 2% 2% 0 0;
+}
+.dozenColumnsRaw .rawFirstPart, .dozenColumnsRaw .rawSecondtPart {
+    max-width: 49% !important;
+    min-width: 20%;
+    height: 100% !important;
+    border: 2px solid #fff;
+    border-radius: 5px;
+}
+
+/********************************Progress Bar***********************************/
+
+#progressBarHolder {
+    position: absolute;
+    width: 50%;
+    height: 7%;
+    top: 42%;
+    left: 25%;
+    background: #16a085;
+    border-radius: 14px;
+    color: #fff;
+    z-index: 100;
+}
+#remainingLeft {
+    float: left;
+    width: 10%;
+    margin: 3% 1.5% 0 1.5%;
+}
+#remSeconds {
+    font-family: "OpenSans-Bold";
+    font-size: 30px;
+}
+#secWord {
+    font-family: "OpenSans-Regular";
+    font-size: 30px;
+}
+.progressStatus {
+    float: left;
+    width: 85%;
+    font-family: "OpenSans-Bold";
+    font-size: 43pt;
+    line-height: 72px;
+    text-align: center;
+}
+#progressAll {
+    width: 97%;
+    height: 13%;
+    background: rgba(255,255,255,.4);
+    margin: 10px auto 0 auto;
+    border-radius: 20px;
+    overflow: hidden;
+}
+#progressFilled {
+    width: 100%;
+    height: 100%;
+    background: #fff;
+    border-radius: 20px;
+}

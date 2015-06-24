@@ -1,0 +1,1287 @@
+﻿<link rel="stylesheet" type="text/css" href="/Content/LiveRoulettemobile.css">
+@{
+    ViewBag.Title = "Live Roulette";
+}
+<script src="~/Scripts/jquery-1.7.1.min.js"></script>
+<link href="~/Content/flexslider.css" rel="stylesheet" />
+<script src="~/Scripts/MobileScripts/jquery.flexslider.js"></script>
+<script src="~/Scripts/fullScreen.js"></script>
+
+<body>
+
+    <div id="RoulettegameWrapper" class="container-fluid">
+
+        <!----------------Statistics Button---------------->
+        <div id="statisticsRlt" onclick="openStatistics()">Statistics</div>
+
+        <!----------------Video Container---------------->
+        <div id="video_container" style="height: 48%; text-align: center;">
+            <video id="pokerVideo" src="http://streams3.betconstruct.com:1935/livedealer/ld9/playlist.m3u8" controls autoplay>
+                Sorry, your browser does not support video tag
+            </video>
+        </div>
+
+        <!----------------Green Layout---------------->
+        <div id="layout">
+            <!----------------Roulette boards and net---------------->
+            <div id="boradsContainer">
+                <table id="board">
+                    <tbody>
+                        <tr>
+                            <td id="boardTd0" rowspan="3"><div id="betId_0" class="nmbCont" onclick="addBet(0)"></div></td>
+                            <td><div id="betId_2" class="nmbCont red" onclick="addBet(2)">3</div></td>
+                            <td><div id="betId_4" class="nmbCont black" onclick="addBet(4)">6</div></td>
+                            <td><div id="betId_6" class="nmbCont red" onclick="addBet(6)">9</div></td>
+                            <td><div id="betId_8" class="nmbCont red" onclick="addBet(8)">12</div></td>
+                            <td><div id="betId_10" class="nmbCont black" onclick="addBet(10)">15</div></td>
+                            <td><div id="betId_12" class="nmbCont red" onclick="addBet(12)">18</div></td>
+                            <td><div id="betId_14" class="nmbCont red" onclick="addBet(14)">21</div></td>
+                            <td><div id="betId_16" class="nmbCont black" onclick="addBet(16)">24</div></td>
+                            <td><div id="betId_18" class="nmbCont red" onclick="addBet(18)">27</div></td>
+                            <td><div id="betId_20" class="nmbCont red" onclick="addBet(20)">30</div></td>
+                            <td><div id="betId_22" class="nmbCont black" onclick="addBet(22)">33</div></td>
+                            <td><div id="betId_24" class="nmbCont red" onclick="addBet(24)">36</div></td>
+                            <td><div id="betId_147" class="nmbCont" onclick="addBet(147)">2to1</div></td>
+                        </tr>
+                        <tr>
+                            <td><div id="betId_50" class="nmbCont black" onclick="addBet(50)">2</div></td>
+                            <td><div id="betId_52" class="nmbCont red" onclick="addBet(52)">5</div></td>
+                            <td><div id="betId_54" class="nmbCont black" onclick="addBet(54)">8</div></td>
+                            <td><div id="betId_56" class="nmbCont black" onclick="addBet(56)">11</div></td>
+                            <td><div id="betId_58" class="nmbCont red" onclick="addBet(58)">14</div></td>
+                            <td><div id="betId_60" class="nmbCont black" onclick="addBet(60)">17</div></td>
+                            <td><div id="betId_62" class="nmbCont black" onclick="addBet(62)">20</div></td>
+                            <td><div id="betId_64" class="nmbCont red" onclick="addBet(64)">23</div></td>
+                            <td><div id="betId_66" class="nmbCont black" onclick="addBet(66)">26</div></td>
+                            <td><div id="betId_68" class="nmbCont black" onclick="addBet(68)">29</div></td>
+                            <td><div id="betId_70" class="nmbCont red" onclick="addBet(70)">32</div></td>
+                            <td><div id="betId_72" class="nmbCont black" onclick="addBet(72)">35</div></td>
+                            <td><div id="betId_146" class="nmbCont" onclick="addBet(146)">2to1</div>
+                        </tr>
+                        <tr>
+                            <td><div id="betId_98" class="nmbCont red" onclick="addBet(98)">1</div></td>
+                            <td><div id="betId_100" class="nmbCont black" onclick="addBet(100)">4</div></td>
+                            <td><div id="betId_102" class="nmbCont red" onclick="addBet(102)">7</div></td>
+                            <td><div id="betId_104" class="nmbCont black" onclick="addBet(104)">10</div></td>
+                            <td><div id="betId_106" class="nmbCont black" onclick="addBet(106)">13</div></td>
+                            <td><div id="betId_108" class="nmbCont red" onclick="addBet(108)">16</div></td>
+                            <td><div id="betId_110" class="nmbCont red" onclick="addBet(110)">19</div></td>
+                            <td><div id="betId_112" class="nmbCont black" onclick="addBet(112)">22</div></td>
+                            <td><div id="betId_114" class="nmbCont red" onclick="addBet(114)">25</div></td>
+                            <td><div id="betId_116" class="nmbCont black" onclick="addBet(116)">28</div></td>
+                            <td><div id="betId_118" class="nmbCont black" onclick="addBet(118)">31</div></td>
+                            <td><div id="betId_120" class="nmbCont red" onclick="addBet(120)">34</div></td>
+                            <td><div id="betId_145" class="nmbCont" onclick="addBet(145)">2to1</div></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <table id="second_board">
+                    <tr>
+                        <td id="betId_148" colspan="2" onclick="addBet(148)">1<sup>st</sup> 12</td>
+                        <td id="betId_149" colspan="2" onclick="addBet(149)">2<sup>nd</sup> 12</td>
+                        <td id="betId_150" colspan="2" onclick="addBet(150)">3<sup>rd</sup> 12</td>
+
+                    </tr>
+                    <tr>
+                        <td id="betId_151" onclick="addBet(151)">1-18</td>
+                        <td id="betId_153" onclick="addBet(153)">Even</td>
+                        <td id="betId_155" class="red" onclick="addBet(155)"></td>
+                        <td id="betId_156" class="black" onclick="addBet(156)"></td>
+                        <td id="betId_154" onclick="addBet(154)"> Odd</td>
+                        <td id="betId_152" onclick="addBet(152)">19-36</td>
+                    </tr>
+                </table>
+
+                <div id="tablesBackground"></div>
+                <!-------------------------Roulette Board Net---------------------------->
+                <div id="net">
+                    @for (int c = 0; c < 3; c++)
+                    {
+                        <div class="blueLinesRow">
+                            @for (int i = 0; i < 12; i++)
+                            {
+                                <div id="betId_@(2*i+1+c*48)" class="first_section" onclick="addBet(@(2*i+1+c*48))"></div>
+                            }
+
+                        </div>
+                        <div class="yellowLinesRow">
+                            @for (int i = 0; i < 12; i++)
+                            {
+                                <div id="betId_@(2*i+25+c*48)" class="circle" onclick="addBet(@(2*i+25+c*48))"></div>
+                                <div id="betId_@(2*i+26+c*48)" class="second_section" onclick="addBet(@(2*i+26+c*48))"></div>
+                            }
+                        </div>
+                    }
+                </div>
+
+            </div>
+            <!-------------------------Roulette Footer---------------------------->
+            <div id="footer_row" class="row">
+                <div id="footerLeftPart" class="footerParts">
+                    @*@if (Convert.ToInt32(Session["UserId"]) > 0)
+                        {
+                            <div id="btn_cashier" onclick="openPopupUrl(0)">Cashier</div>
+                        }
+                        else
+                        {
+                            <div id="sign_in_but_container" class="">
+                                <div id="btn_sign_in">Sign In</div>
+                                <div id="text" style="width: 13%; float: left; margin-left: 0.8%; font-size: 15px;">
+                                    Don't have an account?
+                                    <span style="font-weight: bold; text-decoration: underline;"><a href=""> Register Now</a></span>
+                                </div>
+                            </div>
+                        }*@
+                    <div id="btn_cashier" onclick="openPopupUrl(0)">Cashier</div>
+
+                    <!------------------Betting Icons------------------>
+                    <div id="cancel" class="bettingIcon" onclick="clearAllBets()"></div>
+                    <div id="undo" class="bettingIcon" onclick="undoLastBet()"></div>
+                    <div id="rebet" onclick="rebet()">
+                        <text class="functName">Rebet</text>
+                    </div>
+                </div>
+
+                <!------------------Layouts selectors------------------>
+                <div id="classicLayBut" class="layoutsButs activeClassLay"></div>
+
+                <!------------------Chips and setting buttons------------------>
+                <div id="footerRightPart" class="footerParts">
+                    <div id="chips_container">
+                        <div class="flexslider">
+                            <ul class="slides">
+                                @for (int i = 0; i < 6; i++)
+                                {
+                                    <li>
+                                        <div id='chip@(i)' class="chip_amount chipCol@(i)" onclick="selectChip('@(i)')">0</div>
+                                    </li>
+                                }
+
+                                <!-- items mirrored twice, total of 12 -->
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div id="settings" class="settingsIcon"></div>
+                    <div id="info" class="settingsIcon"></div>
+                    <div id="history" class="settingsIcon"></div>
+                </div>
+
+                <!------------------Layouts selectors------------------>
+                <div id="racetrackLayBut" class="layoutsButs"></div>
+                <div style="clear: both"></div>
+            </div>
+        </div>
+
+        <div id="statisticsHolder"></div>
+
+
+        <div id="progressBarHolder" onclick="updateProgressBar(15)">
+            <div id="remainingLeft">
+                <span id="remSeconds">15</span>
+                <span id="secWord">sec</span>
+            </div>
+            <div class="progressStatus">Please, Place Your Bets</div>
+
+            <div id="progressAll">
+                <div id="progressFilled"></div>
+            </div>
+        </div>
+    </div>
+
+</body>
+<script>
+    /*******************bet Id Mapping*********************/
+    _betIdsMap = new Array();
+    //row 1
+    _betIdsMap[0] = [0];
+    _betIdsMap[1] = [0, 2];
+    _betIdsMap[2] = [2];
+    _betIdsMap[3] = [2, 4];
+    _betIdsMap[4] = [4];
+    _betIdsMap[5] = [4, 6];
+    _betIdsMap[6] = [6];
+    _betIdsMap[7] = [6, 8];
+    _betIdsMap[8] = [8];
+    _betIdsMap[9] = [8, 10];
+    _betIdsMap[10] = [10];
+    _betIdsMap[11] = [10, 12];
+    _betIdsMap[12] = [12];
+    _betIdsMap[13] = [12, 14];
+    _betIdsMap[14] = [14];
+    _betIdsMap[15] = [14, 16];
+    _betIdsMap[16] = [16];
+    _betIdsMap[17] = [16, 18];
+    _betIdsMap[18] = [18];
+    _betIdsMap[19] = [18, 20];
+    _betIdsMap[20] = [20];
+    _betIdsMap[21] = [20, 22];
+    _betIdsMap[22] = [22];
+    _betIdsMap[23] = [22, 24];
+    _betIdsMap[24] = [24];
+    //row 2
+    _betIdsMap[25] = [0, 2, 50];
+    _betIdsMap[26] = [2, 50];
+    _betIdsMap[27] = [2, 4, 50, 52];
+    _betIdsMap[28] = [4, 52];
+    _betIdsMap[29] = [4, 6, 52, 54];
+    _betIdsMap[30] = [6, 54];
+    _betIdsMap[31] = [6, 8, 54, 56];
+    _betIdsMap[32] = [8, 56];
+    _betIdsMap[33] = [8, 10, 56, 58];
+    _betIdsMap[34] = [10, 58];
+    _betIdsMap[35] = [10, 12, 58, 60];
+    _betIdsMap[36] = [12, 60];
+    _betIdsMap[37] = [12, 14, 60, 62];
+    _betIdsMap[38] = [14, 62];
+    _betIdsMap[39] = [14, 16, 62, 64];
+    _betIdsMap[40] = [16, 64];
+    _betIdsMap[41] = [16, 18, 64, 66];
+    _betIdsMap[42] = [18, 66];
+    _betIdsMap[43] = [18, 20, 66, 68];
+    _betIdsMap[44] = [20, 68];
+    _betIdsMap[45] = [20, 22, 68, 70];
+    _betIdsMap[46] = [22, 70];
+    _betIdsMap[47] = [22, 24, 70, 72];
+    _betIdsMap[48] = [24, 72];
+    //row 3
+    _betIdsMap[49] = [0, 50];
+    _betIdsMap[50] = [50];
+    _betIdsMap[51] = [50, 52];
+    _betIdsMap[52] = [52];
+    _betIdsMap[53] = [52, 54];
+    _betIdsMap[54] = [54];
+    _betIdsMap[55] = [54, 56];
+    _betIdsMap[56] = [56];
+    _betIdsMap[57] = [56, 58];
+    _betIdsMap[58] = [58];
+    _betIdsMap[59] = [58, 60];
+    _betIdsMap[60] = [60];
+    _betIdsMap[61] = [60, 62];
+    _betIdsMap[62] = [62];
+    _betIdsMap[63] = [62, 64];
+    _betIdsMap[64] = [64];
+    _betIdsMap[65] = [64, 66];
+    _betIdsMap[66] = [66];
+    _betIdsMap[67] = [66, 68];
+    _betIdsMap[68] = [68];
+    _betIdsMap[69] = [68, 70];
+    _betIdsMap[70] = [70];
+    _betIdsMap[71] = [70, 72];
+    _betIdsMap[72] = [72];
+    //row 4
+    _betIdsMap[73] = [0, 50, 98];
+    _betIdsMap[74] = [50, 98];
+    _betIdsMap[75] = [50, 52, 98, 100];
+    _betIdsMap[76] = [52, 100];
+    _betIdsMap[77] = [52, 54, 100, 102];
+    _betIdsMap[78] = [54, 102];
+    _betIdsMap[79] = [54, 56, 102, 104];
+    _betIdsMap[80] = [56, 104];
+    _betIdsMap[81] = [56, 58, 104, 106];
+    _betIdsMap[82] = [58, 106];
+    _betIdsMap[83] = [58, 60, 106, 108];
+    _betIdsMap[84] = [60, 108];
+    _betIdsMap[85] = [60, 62, 108, 110];
+    _betIdsMap[86] = [62, 110];
+    _betIdsMap[87] = [62, 64, 110, 112];
+    _betIdsMap[88] = [64, 112];
+    _betIdsMap[89] = [64, 66, 112, 114];
+    _betIdsMap[90] = [66, 114];
+    _betIdsMap[91] = [66, 68, 114, 116];
+    _betIdsMap[92] = [68, 116];
+    _betIdsMap[93] = [68, 70, 116, 118];
+    _betIdsMap[94] = [70, 118];
+    _betIdsMap[95] = [70, 72, 118, 120];
+    _betIdsMap[96] = [72, 120];
+    //row 5
+    _betIdsMap[97] = [0, 98];
+    _betIdsMap[98] = [98];
+    _betIdsMap[99] = [98, 100];
+    _betIdsMap[100] = [100];
+    _betIdsMap[101] = [100, 102];
+    _betIdsMap[102] = [102];
+    _betIdsMap[103] = [102, 104];
+    _betIdsMap[104] = [104];
+    _betIdsMap[105] = [104, 106];
+    _betIdsMap[106] = [106];
+    _betIdsMap[107] = [106, 108];
+    _betIdsMap[108] = [108];
+    _betIdsMap[109] = [108, 110];
+    _betIdsMap[110] = [110];
+    _betIdsMap[111] = [110, 112];
+    _betIdsMap[112] = [112];
+    _betIdsMap[113] = [112, 114];
+    _betIdsMap[114] = [114];
+    _betIdsMap[115] = [114, 116];
+    _betIdsMap[116] = [116];
+    _betIdsMap[117] = [116, 118];
+    _betIdsMap[118] = [118];
+    _betIdsMap[119] = [118, 120];
+    _betIdsMap[120] = [120];
+    //row 6
+    _betIdsMap[121] = [0, 2, 50, 98];
+    _betIdsMap[122] = [2, 50, 98];
+    _betIdsMap[123] = [2, 50, 98, 4, 52, 100];
+    _betIdsMap[124] = [4, 52, 100];
+    _betIdsMap[125] = [4, 52, 100, 6, 54, 102];
+    _betIdsMap[126] = [6, 54, 102];
+    _betIdsMap[127] = [6, 54, 102, 8, 56, 104];
+    _betIdsMap[128] = [8, 56, 104];
+    _betIdsMap[129] = [8, 56, 104, 10, 58, 106];
+    _betIdsMap[130] = [10, 58, 106];
+    _betIdsMap[131] = [10, 58, 106, 12, 60, 108];
+    _betIdsMap[132] = [12, 60, 108];
+    _betIdsMap[133] = [12, 60, 108, 14, 62, 110];
+    _betIdsMap[134] = [14, 62, 110];
+    _betIdsMap[135] = [14, 62, 110, 16, 64, 112];
+    _betIdsMap[136] = [16, 64, 112];
+    _betIdsMap[137] = [16, 64, 112, 18, 66, 114];
+    _betIdsMap[138] = [18, 66, 114];
+    _betIdsMap[139] = [18, 66, 114, 20, 68, 116];
+    _betIdsMap[140] = [20, 68, 116];
+    _betIdsMap[141] = [20, 68, 116, 22, 70, 118];
+    _betIdsMap[142] = [22, 70, 118];
+    _betIdsMap[143] = [22, 70, 118, 24, 72, 120];
+    _betIdsMap[144] = [24, 72, 120];
+    //columns
+    _betIdsMap[145] = [98, 100, 102, 104, 106, 108, 110, 112, 114, 116, 118, 120];
+    _betIdsMap[146] = [50, 52, 54, 56, 58, 60, 62, 64, 66, 68, 70, 72];
+    _betIdsMap[147] = [2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24];
+    // 12 groups
+    _betIdsMap[148] = [2, 50, 98, 4, 52, 100, 6, 54, 102, 8, 56, 104];
+    _betIdsMap[149] = [10, 58, 106, 12, 60, 108, 14, 62, 110, 16, 64, 112];
+    _betIdsMap[150] = [18, 66, 114, 20, 68, 116, 22, 70, 118, 24, 72, 120];
+    // low, high
+    _betIdsMap[151] = [2, 50, 98, 4, 52, 100, 6, 54, 102, 8, 56, 104, 10, 58, 106, 12, 60, 108];
+    _betIdsMap[152] = [14, 62, 110, 16, 64, 112, 18, 66, 114, 20, 68, 116, 22, 70, 118, 24, 72, 120];
+    // even, odd, red, black
+    _betIdsMap[153] = [50, 100, 4, 54, 104, 8, 58, 108, 12, 62, 112, 16, 66, 116, 20, 70, 120, 24];
+    _betIdsMap[154] = [98, 2, 52, 102, 6, 56, 106, 10, 60, 110, 14, 64, 114, 18, 68, 118, 22, 72];
+    _betIdsMap[155] = [98, 2, 52, 102, 6, 8, 58, 108, 12, 110, 14, 64, 114, 18, 20, 70, 120, 24];
+    _betIdsMap[156] = [50, 100, 4, 54, 104, 56, 106, 10, 60, 62, 112, 16, 66, 116, 68, 118, 22, 72];
+
+
+    _segmentBetIdsMap = new Array();
+    _segmentBetIdsMap["voisins"] = [25, 101, 9, 13, 111, 91, 71];
+    _voisinsKoefs = [2, 1, 1, 1, 1, 2, 1];
+    _segmentBetIdsMap["orphelins"] = [98, 5, 59, 61, 119];
+    _segmentBetIdsMap["tiers"] = [53, 80, 107, 40, 19, 23];
+    _segmentBetIdsMap["jeu"] = [1, 9, 66, 71];
+
+
+    _specialBetIdsMap = new Array();
+    _specialBetIdsMap["digit0"] = [0, 104, 62, 20];
+    _specialBetIdsMap["digit1"] = [98, 56, 14, 118];
+    _specialBetIdsMap["digit2"] = [50, 8, 112, 70];
+    _specialBetIdsMap["digit3"] = [2, 106, 64, 22];
+    _specialBetIdsMap["digit4"] = [100, 58, 16, 120];
+    _specialBetIdsMap["digit5"] = [52, 10, 114, 72];
+    _specialBetIdsMap["digit6"] = [4, 108, 66, 24];
+    _specialBetIdsMap["digit7"] = [102, 60, 18];
+    _specialBetIdsMap["digit8"] = [54, 12, 116];
+    _specialBetIdsMap["digit9"] = [6, 110, 68];
+
+    _specialBetIdsMap["red_snake"] = [98, 52, 6, 8, 58, 108, 110, 64, 18, 20, 70, 120]; // values [1, 5, 9, 12, 14, 16, 19, 23, 27, 30, 32, 34]
+    _specialBetIdsMap["black_snake"] = [50, 4, 54, 104, 106, 61, 16, 67, 116, 118, 72];
+    _specialBetIdsMap["red_splits"] = [7, 109, 13, 19];
+    _specialBetIdsMap["black_splits"] = [55, 80, 105, 61, 67, 92, 117];
+
+    var _digitToBetIdMap = new Array();
+    _digitToBetIdMap[0] = 0;
+    _digitToBetIdMap[1] = 98;
+    _digitToBetIdMap[2] = 50;
+    _digitToBetIdMap[3] = 2;
+    _digitToBetIdMap[4] = 100;
+    _digitToBetIdMap[5] = 52;
+    _digitToBetIdMap[6] = 4;
+    _digitToBetIdMap[7] = 102;
+    _digitToBetIdMap[8] = 54;
+    _digitToBetIdMap[9] = 6;
+    _digitToBetIdMap[10] = 104;
+    _digitToBetIdMap[11] = 56;
+    _digitToBetIdMap[12] = 8;
+    _digitToBetIdMap[13] = 106;
+    _digitToBetIdMap[14] = 58;
+    _digitToBetIdMap[15] = 10;
+    _digitToBetIdMap[16] = 108;
+    _digitToBetIdMap[17] = 60;
+    _digitToBetIdMap[18] = 12;
+    _digitToBetIdMap[19] = 110;
+    _digitToBetIdMap[20] = 62;
+    _digitToBetIdMap[21] = 14;
+    _digitToBetIdMap[22] = 112;
+    _digitToBetIdMap[23] = 64;
+    _digitToBetIdMap[24] = 16;
+    _digitToBetIdMap[25] = 114;
+    _digitToBetIdMap[26] = 66;
+    _digitToBetIdMap[27] = 18;
+    _digitToBetIdMap[28] = 116;
+    _digitToBetIdMap[29] = 68;
+    _digitToBetIdMap[30] = 20;
+    _digitToBetIdMap[31] = 118;
+    _digitToBetIdMap[32] = 70;
+    _digitToBetIdMap[33] = 22;
+    _digitToBetIdMap[34] = 120;
+    _digitToBetIdMap[35] = 72;
+    _digitToBetIdMap[36] = 24;
+
+
+//bet Id To Market Name Map
+    var MARKET_STRAIGHT_UP = "Number",
+        MARKET_SPLIT = "Split",
+        MARKET_STREET = "Street",
+        MARKET_CORNER = "Corner",
+        MARKET_LINE = "SixNumbers",
+        MARKET_COLUMN = "Column",
+        MARKET_DOZEN = "Dozen",
+        MARKET_LOW_HIGH = "Low/High",
+        MARKET_EVEN_ODD = "Odd/Even",
+        MARKET_BLACK_RED = "Red/Black",
+        MARKET_TABLE = "Table";
+
+    var betIdToMarketNameMap = new Array();
+    betIdToMarketNameMap['0'] = MARKET_STRAIGHT_UP;
+    betIdToMarketNameMap['1'] = MARKET_SPLIT;
+    betIdToMarketNameMap['2'] = MARKET_STRAIGHT_UP;
+    betIdToMarketNameMap['3'] = MARKET_SPLIT;
+    betIdToMarketNameMap['4'] = MARKET_STRAIGHT_UP;
+    betIdToMarketNameMap['5'] = MARKET_SPLIT;
+    betIdToMarketNameMap['6'] = MARKET_STRAIGHT_UP;
+    betIdToMarketNameMap['7'] = MARKET_SPLIT;
+    betIdToMarketNameMap['8'] = MARKET_STRAIGHT_UP;
+    betIdToMarketNameMap['9'] = MARKET_SPLIT;
+    betIdToMarketNameMap['10'] = MARKET_STRAIGHT_UP;
+    betIdToMarketNameMap['11'] = MARKET_SPLIT;
+    betIdToMarketNameMap['12'] = MARKET_STRAIGHT_UP;
+    betIdToMarketNameMap['13'] = MARKET_SPLIT;
+    betIdToMarketNameMap['14'] = MARKET_STRAIGHT_UP;
+    betIdToMarketNameMap['15'] = MARKET_SPLIT;
+    betIdToMarketNameMap['16'] = MARKET_STRAIGHT_UP;
+    betIdToMarketNameMap['17'] = MARKET_SPLIT;
+    betIdToMarketNameMap['18'] = MARKET_STRAIGHT_UP;
+    betIdToMarketNameMap['19'] = MARKET_SPLIT;
+    betIdToMarketNameMap['20'] = MARKET_STRAIGHT_UP;
+    betIdToMarketNameMap['21'] = MARKET_SPLIT;
+    betIdToMarketNameMap['22'] = MARKET_STRAIGHT_UP;
+    betIdToMarketNameMap['23'] = MARKET_SPLIT;
+    betIdToMarketNameMap['24'] = MARKET_STRAIGHT_UP;
+    betIdToMarketNameMap['25'] = MARKET_STREET;
+    betIdToMarketNameMap['26'] = MARKET_SPLIT;
+    betIdToMarketNameMap['27'] = MARKET_CORNER;
+    betIdToMarketNameMap['28'] = MARKET_SPLIT;
+    betIdToMarketNameMap['29'] = MARKET_CORNER;
+    betIdToMarketNameMap['30'] = MARKET_SPLIT;
+    betIdToMarketNameMap['31'] = MARKET_CORNER;
+    betIdToMarketNameMap['32'] = MARKET_SPLIT;
+    betIdToMarketNameMap['33'] = MARKET_CORNER;
+    betIdToMarketNameMap['34'] = MARKET_SPLIT;
+    betIdToMarketNameMap['35'] = MARKET_CORNER;
+    betIdToMarketNameMap['36'] = MARKET_SPLIT;
+    betIdToMarketNameMap['37'] = MARKET_CORNER;
+    betIdToMarketNameMap['38'] = MARKET_SPLIT;
+    betIdToMarketNameMap['39'] = MARKET_CORNER;
+    betIdToMarketNameMap['40'] = MARKET_SPLIT;
+    betIdToMarketNameMap['41'] = MARKET_CORNER;
+    betIdToMarketNameMap['42'] = MARKET_SPLIT;
+    betIdToMarketNameMap['43'] = MARKET_CORNER;
+    betIdToMarketNameMap['44'] = MARKET_SPLIT;
+    betIdToMarketNameMap['45'] = MARKET_CORNER;
+    betIdToMarketNameMap['46'] = MARKET_SPLIT;
+    betIdToMarketNameMap['47'] = MARKET_CORNER;
+    betIdToMarketNameMap['48'] = MARKET_SPLIT;
+    betIdToMarketNameMap['49'] = MARKET_SPLIT;
+    betIdToMarketNameMap['50'] = MARKET_STRAIGHT_UP;
+    betIdToMarketNameMap['51'] = MARKET_SPLIT;
+    betIdToMarketNameMap['52'] = MARKET_STRAIGHT_UP;
+    betIdToMarketNameMap['53'] = MARKET_SPLIT;
+    betIdToMarketNameMap['54'] = MARKET_STRAIGHT_UP;
+    betIdToMarketNameMap['55'] = MARKET_SPLIT;
+    betIdToMarketNameMap['56'] = MARKET_STRAIGHT_UP;
+    betIdToMarketNameMap['57'] = MARKET_SPLIT;
+    betIdToMarketNameMap['58'] = MARKET_STRAIGHT_UP;
+    betIdToMarketNameMap['59'] = MARKET_SPLIT;
+    betIdToMarketNameMap['60'] = MARKET_STRAIGHT_UP;
+    betIdToMarketNameMap['61'] = MARKET_SPLIT;
+    betIdToMarketNameMap['62'] = MARKET_STRAIGHT_UP;
+    betIdToMarketNameMap['63'] = MARKET_SPLIT;
+    betIdToMarketNameMap['64'] = MARKET_STRAIGHT_UP;
+    betIdToMarketNameMap['65'] = MARKET_SPLIT;
+    betIdToMarketNameMap['66'] = MARKET_STRAIGHT_UP;
+    betIdToMarketNameMap['67'] = MARKET_SPLIT;
+    betIdToMarketNameMap['68'] = MARKET_STRAIGHT_UP;
+    betIdToMarketNameMap['69'] = MARKET_SPLIT;
+    betIdToMarketNameMap['70'] = MARKET_STRAIGHT_UP;
+    betIdToMarketNameMap['71'] = MARKET_SPLIT;
+    betIdToMarketNameMap['72'] = MARKET_STRAIGHT_UP;
+    betIdToMarketNameMap['73'] = MARKET_STREET;
+    betIdToMarketNameMap['74'] = MARKET_SPLIT;
+    betIdToMarketNameMap['75'] = MARKET_CORNER;
+    betIdToMarketNameMap['76'] = MARKET_SPLIT;
+    betIdToMarketNameMap['77'] = MARKET_CORNER;
+    betIdToMarketNameMap['78'] = MARKET_SPLIT;
+    betIdToMarketNameMap['79'] = MARKET_CORNER;
+    betIdToMarketNameMap['80'] = MARKET_SPLIT;
+    betIdToMarketNameMap['81'] = MARKET_CORNER;
+    betIdToMarketNameMap['82'] = MARKET_SPLIT;
+    betIdToMarketNameMap['83'] = MARKET_CORNER;
+    betIdToMarketNameMap['84'] = MARKET_SPLIT;
+    betIdToMarketNameMap['85'] = MARKET_CORNER;
+    betIdToMarketNameMap['86'] = MARKET_SPLIT;
+    betIdToMarketNameMap['87'] = MARKET_CORNER;
+    betIdToMarketNameMap['88'] = MARKET_SPLIT;
+    betIdToMarketNameMap['89'] = MARKET_CORNER;
+    betIdToMarketNameMap['90'] = MARKET_SPLIT;
+    betIdToMarketNameMap['91'] = MARKET_CORNER;
+    betIdToMarketNameMap['92'] = MARKET_SPLIT;
+    betIdToMarketNameMap['93'] = MARKET_CORNER;
+    betIdToMarketNameMap['94'] = MARKET_SPLIT;
+    betIdToMarketNameMap['95'] = MARKET_CORNER;
+    betIdToMarketNameMap['96'] = MARKET_SPLIT;
+    betIdToMarketNameMap['97'] = MARKET_SPLIT;
+    betIdToMarketNameMap['98'] = MARKET_STRAIGHT_UP;
+    betIdToMarketNameMap['99'] = MARKET_SPLIT;
+    betIdToMarketNameMap['100'] = MARKET_STRAIGHT_UP;
+    betIdToMarketNameMap['101'] = MARKET_SPLIT;
+    betIdToMarketNameMap['102'] = MARKET_STRAIGHT_UP;
+    betIdToMarketNameMap['103'] = MARKET_SPLIT;
+    betIdToMarketNameMap['104'] = MARKET_STRAIGHT_UP;
+    betIdToMarketNameMap['105'] = MARKET_SPLIT;
+    betIdToMarketNameMap['106'] = MARKET_STRAIGHT_UP;
+    betIdToMarketNameMap['107'] = MARKET_SPLIT;
+    betIdToMarketNameMap['108'] = MARKET_STRAIGHT_UP;
+    betIdToMarketNameMap['109'] = MARKET_SPLIT;
+    betIdToMarketNameMap['110'] = MARKET_STRAIGHT_UP;
+    betIdToMarketNameMap['111'] = MARKET_SPLIT;
+    betIdToMarketNameMap['112'] = MARKET_STRAIGHT_UP;
+    betIdToMarketNameMap['113'] = MARKET_SPLIT;
+    betIdToMarketNameMap['114'] = MARKET_STRAIGHT_UP;
+    betIdToMarketNameMap['115'] = MARKET_SPLIT;
+    betIdToMarketNameMap['116'] = MARKET_STRAIGHT_UP;
+    betIdToMarketNameMap['117'] = MARKET_SPLIT;
+    betIdToMarketNameMap['118'] = MARKET_STRAIGHT_UP;
+    betIdToMarketNameMap['119'] = MARKET_SPLIT;
+    betIdToMarketNameMap['120'] = MARKET_STRAIGHT_UP;
+    betIdToMarketNameMap['121'] = MARKET_CORNER;
+    betIdToMarketNameMap['122'] = MARKET_STREET;
+    betIdToMarketNameMap['123'] = MARKET_LINE;
+    betIdToMarketNameMap['124'] = MARKET_STREET;
+    betIdToMarketNameMap['125'] = MARKET_LINE;
+    betIdToMarketNameMap['126'] = MARKET_STREET;
+    betIdToMarketNameMap['127'] = MARKET_LINE;
+    betIdToMarketNameMap['128'] = MARKET_STREET;
+    betIdToMarketNameMap['129'] = MARKET_LINE;
+    betIdToMarketNameMap['130'] = MARKET_STREET;
+    betIdToMarketNameMap['131'] = MARKET_LINE;
+    betIdToMarketNameMap['132'] = MARKET_STREET;
+    betIdToMarketNameMap['133'] = MARKET_LINE;
+    betIdToMarketNameMap['134'] = MARKET_STREET;
+    betIdToMarketNameMap['135'] = MARKET_LINE;
+    betIdToMarketNameMap['136'] = MARKET_STREET;
+    betIdToMarketNameMap['137'] = MARKET_LINE;
+    betIdToMarketNameMap['138'] = MARKET_STREET;
+    betIdToMarketNameMap['139'] = MARKET_LINE;
+    betIdToMarketNameMap['140'] = MARKET_STREET;
+    betIdToMarketNameMap['141'] = MARKET_LINE;
+    betIdToMarketNameMap['142'] = MARKET_STREET;
+    betIdToMarketNameMap['143'] = MARKET_LINE;
+    betIdToMarketNameMap['144'] = MARKET_STREET;
+    betIdToMarketNameMap['145'] = MARKET_COLUMN;
+    betIdToMarketNameMap['146'] = MARKET_COLUMN;
+    betIdToMarketNameMap['147'] = MARKET_COLUMN;
+    betIdToMarketNameMap['148'] = MARKET_DOZEN;
+    betIdToMarketNameMap['149'] = MARKET_DOZEN;
+    betIdToMarketNameMap['150'] = MARKET_DOZEN;
+    betIdToMarketNameMap['151'] = MARKET_LOW_HIGH;
+    betIdToMarketNameMap['152'] = MARKET_LOW_HIGH;
+    betIdToMarketNameMap['153'] = MARKET_EVEN_ODD;
+    betIdToMarketNameMap['154'] = MARKET_EVEN_ODD;
+    betIdToMarketNameMap['155'] = MARKET_BLACK_RED;
+    betIdToMarketNameMap['156'] = MARKET_BLACK_RED;
+
+
+    var chipnumbers = [0.5, 1, 2, 5, 10, 25],
+        highestIndex = 10,
+        progressBarColors = ["#E74C3C", "#DD501E", "#D35400", "#E67E22", "#F39C12", "#859E4C", "#16A085"];
+
+    var bettingTime = 15,
+        allWidth = parseFloat($("#progressAll").width());
+
+    function updateProgressBar(remSeconds) {
+        $("#remSeconds").html(remSeconds);
+        var remSecPerc = remSeconds * 100 / bettingTime;
+        $("#progressFilled").css("width", remSecPerc + "%");
+        countsDown(remSeconds);
+    }
+    function countsDown(remSeconds) {
+        if (remSeconds > 0) {
+            $("#progressFilled").animate({ 'width': '-=' + allWidth / bettingTime }, 1000, function () {
+                var changeSec = Math.max(remSeconds - 1, 0);
+                $("#remSeconds").html(changeSec);
+                countsDown(changeSec);
+            });
+        }
+        else {
+            $("#progressFilled").width(0);
+        }
+        
+    }
+
+
+
+
+
+
+
+
+    $(function() {
+        $("#chip0").addClass("activeChip");
+
+        $('.flexslider').flexslider({
+            animation: "slide",
+            slideshow: false,
+            animationLoop: false,
+            itemWidth: 3,
+            itemMargin: 0,
+            minItems: 3,
+            maxItems: 3
+        });
+
+        GetLimits();
+        GetPlayerBalance();
+        //setInterval(function () { GetStatus(); }, 2000);
+    });
+
+    // Bet information
+    var _bets = new Array(),
+        rebet_bets = [
+            { betId: 30, amount: 10, active: true, length: 1 },
+            { betId: 2, amount: 5, active: true, length: 1 },
+            { betId: 140, amount: 1, active: true, length: 1 },
+            { betId: 26, amount: 7, active: true, length: 1 },
+            { betId: 48, amount: 3, active: true, length: 1 },
+            { betId: 12, amount: 20, active: true, length: 1 },
+            { betId: 85, amount: 100, active: true, length: 1 },
+            { betId: 10, amount: 15, active: true, length: 1 },
+            { betId: 6, amount: 8, active: true, length: 1 }
+        ],
+        lastAdeedBetLength = 0;
+        _tableLimits = new Array(),
+        _limitsInfo = new Array(),
+        _totalBetAmount = 0,
+        _balance = 0,
+        _currency = "",
+        _selectedChipValue = chipnumbers[0];
+
+    function GetStatus() {
+        $.ajax({
+            type: "POST",
+            url: '@Url.Action("GetStatus", "Home")',
+            data: { gameId: 102, tableId: 101 },
+            success: function (data) {
+                if (data != null && data != 'null' && data != "") {
+                    var myData = JSON.parse(data);
+                    if (myData.Status == 2) {
+                        DoBet();
+                    }
+                }
+            }
+        });
+    }
+
+
+    function GetLimits() {
+        $.ajax({
+            type: "POST",
+            url: '@Url.Action("GetLimits", "Home")',
+            data: { gameId: 102, tableId: 101 },
+            success: function (data) {
+                if (data != null && data != 'null' && data != "") {
+                    var myData = JSON.parse(data);
+                    var limits = myData.MarketLimits;
+                    for (var j = 0; j < limits.length; j++) {
+                        _limitsInfo[limits[j].MarketName] = limits[j];
+                    }
+                    for (var betId = 0; betId <= 156; betId++) {
+                        _tableLimits[betId] = _limitsInfo[betIdToMarketNameMap[betId]];
+                    }
+
+                    if (myData.Chips)
+                        chipnumbers = myData.Chips;
+
+                    //chips sums
+                    for (var i = 0; i < chipnumbers.length; i++) {
+                        $("#chip" + i).html(chipnumbers[i] % 1000 === 0 ? parseInt(chipnumbers[i] / 1000) + "K" : chipnumbers[i]);
+                    };
+                }
+            }
+        });
+    }
+
+    function GetPlayerBalance() {
+        $.ajax({
+            type: "POST",
+            url: '@Url.Action("GetPlayerBalance", "Home")',
+            success: function(data) {
+                if (data != null && data != 'null' && data != "") {
+                    var myBalance = JSON.parse(data);
+                    _balance = myBalance.Balance;
+                    _currency = myBalance.CurrencySymbol;
+                } else {
+                    _balance = 0;
+                }
+            }
+        });
+    }
+
+    function getTotalAmountForBetId(betId) {
+        var amount = 0;
+
+        for (var i = 0; i < _bets.length; i++) {
+            if (_bets[i].betId == betId) {
+                amount += _bets[i].amount;
+            }
+        }
+        return amount;
+    }
+
+    function exceedsBalance(amount) {
+        if (_totalBetAmount + amount > _balance) {
+            alert("Low Balance");
+            return true;
+        }
+        return false;
+    }
+
+    function maxTableLimit() {
+        return _limitsInfo[MARKET_TABLE].MaxBet;
+    }
+
+    function minTableLimit() {
+        return _limitsInfo[MARKET_TABLE].MinBet;
+    }
+
+    function getTableLimitAllowedAmount() {
+        return maxTableLimit() - _totalBetAmount;
+    }
+
+    function checkTableLimit(betAmount) {
+        var tableLimitAllowedAmount = getTableLimitAllowedAmount();
+        return betAmount > tableLimitAllowedAmount;
+    }
+
+    function getMinLimitForBet(betId) {
+        return _tableLimits[betId].MinBet;
+    }
+
+    function getMaxLimitForBet(betId) {
+        return _tableLimits[betId].MaxBet;
+    }
+
+    function checkMinimum(betId, betAmount) {
+        return getTotalAmountForBetId(betId) + betAmount < getMinLimitForBet(betId);
+    }
+
+    function checkMaximum(betId, betAmount) {
+        return getTotalAmountForBetId(betId) + betAmount > getMaxLimitForBet(betId);
+    }
+
+    function getMaximumAllowedAmount(betId) {
+        return getMaxLimitForBet(betId) - getTotalAmountForBetId(betId);
+    }
+
+    function tableLimitExceeded() {
+        alert("table Limit Exceeded");
+    }
+
+    function minimumIsNotReached(betId, acceptedAmount) {
+        alert("minimum Is Not Reached");
+    }
+
+    function maximumExceeded(betId, acceptedAmount) {
+        alert("maximum Exceeded");
+    }
+
+    function noLimitExceeded() {
+        alert("no Limit Exceeded");
+    }
+
+    function addBet(betId, amount, length) {
+
+        var betAmount = typeof amount == 'undefined' ? _selectedChipValue : amount;
+        length = typeof length == 'undefined' ? 1 : length;
+        if (betAmount <= 0) return;
+
+        if (exceedsBalance(betAmount)) return;
+
+        var tableLimitExceeded = checkTableLimit(betAmount);
+        var minimumBetIsNotReached = checkMinimum(betId, betAmount);
+        var maximumBetExceeded = checkMaximum(betId, betAmount);
+
+        var tableLimitAllowedAmount = getTableLimitAllowedAmount();
+        var maximumAllowedAmount = getMaximumAllowedAmount(betId);
+
+
+        // table bets are full
+        if (tableLimitExceeded && tableLimitAllowedAmount == 0) {
+            tableLimitExceeded();
+            return;
+        }
+
+        var betEvent;
+        var acceptedAmount;
+        var active = true;
+
+        if (minimumBetIsNotReached) {
+
+            if (tableLimitExceeded) {
+                acceptedAmount = tableLimitAllowedAmount;
+            } else {
+                acceptedAmount = betAmount;
+            }
+
+            minimumIsNotReached(betId, acceptedAmount);
+
+            active = false;
+            return;
+        } else if (maximumBetExceeded) {
+            if (tableLimitExceeded) {
+                acceptedAmount = Math.min(tableLimitAllowedAmount, maximumAllowedAmount);
+                if (acceptedAmount == tableLimitAllowedAmount) {
+                    tableLimitExceeded();
+                } else if (acceptedAmount == maximumAllowedAmount) {
+                    maximumExceeded(betId, acceptedAmount);
+                }
+            } else {
+                acceptedAmount = maximumAllowedAmount;
+                maximumExceeded(betId, acceptedAmount);
+            }
+            return;
+        } else if (tableLimitExceeded) {
+            acceptedAmount = tableLimitAllowedAmount;
+
+            if (checkMinimum(betId, acceptedAmount)) {
+                active = false;
+                minimumIsNotReached(betId, acceptedAmount);
+            }
+            tableLimitExceeded();
+            return;
+        } else {
+            //noLimitExceeded();
+            acceptedAmount = betAmount;
+        }
+
+        _addBet(betId, acceptedAmount, active, length);
+    }
+
+    function _addBet(betId, amount, active, length) {
+        _totalBetAmount += amount;
+        _bets.push({ betId: betId, amount: amount, active: active, length: length });
+        if (active) {
+            BET_ADDED(betId);
+        } else {
+            PASSIVE_BET_ADDED(betId);
+        }
+    }
+
+    function rebet() {
+        if (rebet_bets.length > 0) {
+            var betAmount = 0;
+            for (var i = 0; i < rebet_bets.length; i++) {
+                betAmount += rebet_bets[i].amount;
+            }
+            if (exceedsBalance(_totalBetAmount + betAmount)) {
+                alert("Low Balance");
+                return;
+            }
+            for (i = 0; i < rebet_bets.length; i++) {
+                addBet(rebet_bets[i].betId, rebet_bets[i].amount, rebet_bets.length);
+            }
+        }
+    }
+
+    function BET_ADDED(betId) {
+        updateChips(betId, false);
+    }
+
+    function PASSIVE_BET_ADDED(betId) {
+        updateChips(betId, true);
+    }
+
+    function BET_REMOVED(betId) {
+        updateChips(betId, false);
+    }
+
+    function ALL_BETS_REMOVED() {
+        alert("All Bets Removed");
+    }
+
+    function clearAllBets() {
+        while (_bets.length > 0) {
+            var bet = _bets.pop();
+            BET_REMOVED(bet.betId);
+        }
+        _totalBetAmount = 0;
+        ALL_BETS_REMOVED();
+    }
+
+    function undoLastBet() {
+        if (_bets.length > 0) {
+            var removedBets = new Array();
+
+            var lastBet = _bets[_bets.length - 1];
+            var count = _bets[_bets.length - 1].length; //lastBet.length;
+
+            for (var i = 0; i < count; i++) {
+                var bet = _bets.pop();
+                removedBets.push(bet);
+                _totalBetAmount -= bet.amount;
+                BET_REMOVED(bet.betId);
+            }
+
+            for (var j = 0; j < removedBets.length; j++) {
+                var betId = removedBets[j].betId;
+                var minimumIsNotReached = checkMinimum(betId, 0);
+                if (minimumIsNotReached == true) {
+                    PASSIVE_BET_ADDED(betId);
+                }
+            }
+
+            if (_bets.length == 0) {
+                ALL_BETS_REMOVED();
+            }
+        }
+    }
+
+    function callBet(savedBet) {
+        var bets = savedBet.bets;
+
+
+        var totalAmount = 0;
+        for (var j = 0; j < bets.length; j++) {
+            totalAmount += bets[j].amount;
+        }
+        if (exceedsBalance(totalAmount)) {
+            return;
+        }
+
+        for (var i = 0; i < bets.length; i++) {
+            var betItem = bets[i];
+            if (i == bets.length - 1) {
+                addBet(betItem.betId, betItem.amount, bets.length);
+            } else {
+                addBet(betItem.betId, betItem.amount);
+            }
+        }
+    }
+
+    function dataToSendToServer() {
+        var data = [];
+        for (var i = 0; i < _bets.length; ++i) {
+            if (_bets[i].active) {
+                data.push({ BetId: _bets[i].betId, BetAmount: _bets[i].amount });
+            }
+        }
+        return JSON.stringify(data);
+    }
+
+    function DoBet() {
+        if (_bets.length > 0) {
+            $.ajax({
+                type: "POST",
+                url: '@Url.Action("DoBet", "Home")',
+                data: { gameId: 102, tableId: 101, betAmount: 0, betInfo: dataToSendToServer() },
+                success: function (data) {
+                    if (data && data == "Ok") {
+                    }
+                }
+            });
+        }
+    }
+
+    //function thousandToK(value) {
+    //    if (value >= 1000) {
+    //        if (value % 100 === 0) {
+    //            return parseInt(value / 1000).toString() + "k";
+    //        }
+    //        else {
+    //            return Math.floor(value / 1000).toString() + "k" + "+";
+    //        }
+    //    }
+    //    else {
+    //        if (value >= 100) {
+    //            if (value * 10 % 1 === 0) {
+    //                return (value).toString();
+    //            }
+    //            else {
+    //                return Math.floor(value).toString() + "+";
+    //            }
+    //        }
+    //        else {
+    //            if (value * 100 % 1 === 0) {
+    //                return (value).toString();
+    //            }
+    //            else {
+    //                return Math.floor(value).toString() + "+";
+    //            }
+    //        }
+    //    }
+    //}
+
+
+    /********************Select Chip*************************/
+    function selectChip(chipId) {
+        $(".activeChip").animate({ "marginTop": "0" }, 200, function() {
+             $(".activeChip").removeClass("activeChip");
+        });
+        $('#chip' + chipId).animate({ "marginTop": "-0.4%" }, 200, function() {
+            $('#chip' + chipId).addClass("activeChip");
+            _selectedChipValue = chipnumbers[chipId];
+        });
+    }
+
+    function updateChips(betId, passive)
+    {
+	    //var suffix:String = passive ? "_inactive" : "";
+        var _chipContainer = $("#betId_" + betId);
+        _chipContainer.find(".chip_circle").remove();
+
+        var totalAmount = getTotalAmountForBetId(betId);
+        var remainingAmount = totalAmount;
+
+        var chipValues = chipnumbers;
+
+
+        for (var i = 0; i < chipValues.length; i++)
+        {
+            var currentAmount = parseInt(remainingAmount / chipValues[i]);
+
+            if (currentAmount > 0)
+            {
+                for (var j = 0; j < currentAmount; j++)
+                {
+                    //var chip = Storage.getSprite(passive ? "chip_inactive" : "board_chip" + suffix + chipValues[i]);
+                    //if(passive)
+                    //{
+                    //    (chip.getChildByName("value") as TextField).text = chipValues[i];
+                    //}
+
+                    var chip = '<div style="z-index: ' + highestIndex + '" class="chip_circle chipCol' + i + '">' + chipValues[i] + '</div>';
+                    _chipContainer.append(chip);
+                    highestIndex ++;
+
+                    if (_chipContainer.find(".chip_circle").length >= 2)
+                    {
+                        break;
+                    }
+                }
+
+                remainingAmount -= currentAmount * chipValues[i];
+            }
+
+            if (_chipContainer.find(".chip_circle").length >= 2)
+            {
+                break;
+            }
+        }
+
+        if (_chipContainer.find(".chip_circle").length > 1) {
+            if (chipValues.indexOf(totalAmount) == -1)
+                var className = "chip_circle";
+            else
+                var className = "chip_circle chipCol" + chipValues.indexOf(totalAmount);
+            var totalChip = '<div style="z-index: ' + highestIndex + '" class="' + className + '">' + (totalAmount % 1000 == 0 ? totalAmount / 1000 + "K" : totalAmount) + '</div>';
+            _chipContainer.append(totalChip);
+            highestIndex++;
+        }
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+    $(document).ready(function () {
+        /********************Betting areas hovers*************************/
+        $('#board td div, #second_board td, .circle, .first_section, .second_section').hover(function () {
+            var hoveredBetId = $(this).attr("id").split("_")[1];
+            for (var i = 0; i < _betIdsMap[hoveredBetId].length; i++) {
+                $('#betId_' + _betIdsMap[hoveredBetId][i]).addClass('active');
+            }
+        },
+        function () {
+            $('.active').removeClass('active');
+        });
+
+
+        //var boradsContainer = document.getElementById('board');
+        //boradsContainer.addEventListener('touchstart', function(e) {
+        //    var touchobj = e.target;
+        //    alert
+        //    e.preventDefault();
+        //}, false);
+
+        //boradsContainer.addEventListener('touchmove', function(e) {
+        //    var touchobj = e.changedTouches[0];
+        //    e.preventDefault();
+        //}, false);
+
+        //boradsContainer.addEventListener('touchend', function(e) {
+        //    var touchobj = e.changedTouches[0];
+        //    e.preventDefault();
+        //}, false);
+    });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    $(function () {
+        ScaleDivOnScreen();
+    });
+
+    (function () {
+        var win = $(window);
+        win.resize(function () {
+
+            var win_w = win.width(),
+                win_h = win.height(),
+                $bg = $("#RoulettegameWrapper"),
+                zoom = Math.max(Math.min(win_w / 2048, win_h / 1536), 0.1),
+                marginLeft = Math.abs(Math.max(win_w - $bg.width() * zoom, 0) / 2);
+            $bg.css({ 'zoom': zoom });
+            document.getElementById('RoulettegameWrapper').style.MozTransform = "scale(" + zoom + ")";
+            document.getElementById('RoulettegameWrapper').style.OTransform = "scale(" + zoom + ")";
+            document.getElementById('RoulettegameWrapper').style.WebTransform = "scale(" + zoom + ")";
+            $bg.css({
+                'transform-origin': '0% 0%',
+                '-webkit-transform-origin': '0% 0%',
+                '-moz-transform-origin': '0% 0%',
+                '-ms-transform-origin': '0% 0%',
+                '-o-transform-origin': '0% 0%'
+            });
+            if (!(/Chrome/.test(navigator.userAgent) && /Google Inc/.test(navigator.vendor)))
+                $bg.css({
+                    'margin-left': marginLeft
+                });
+
+        }).resize();
+    })(jQuery);
+
+    function ScaleDivOnScreen() {
+        var win = $(window);
+        var win_w = win.width(),
+            win_h = win.height(),
+            $bg = $("#RoulettegameWrapper"),
+            zoom = Math.max(Math.min(win_w / 2048, win_h / 1536), 0.1),
+            marginLeft = Math.abs(Math.max(win_w - $bg.width() * zoom, 0) / 2);
+        $bg.css({ 'zoom': zoom });
+        document.getElementById('RoulettegameWrapper').style.MozTransform = "scale(" + zoom + ")";
+        document.getElementById('RoulettegameWrapper').style.OTransform = "scale(" + zoom + ")";
+        document.getElementById('RoulettegameWrapper').style.WebTransform = "scale(" + zoom + ")";
+        $bg.css({
+            'transform-origin': '0% 0%',
+            '-webkit-transform-origin': '0% 0%',
+            '-moz-transform-origin': '0% 0%',
+            '-ms-transform-origin': '0% 0%',
+            '-o-transform-origin': '0% 0%'
+        });
+        if (!(/Chrome/.test(navigator.userAgent) && /Google Inc/.test(navigator.vendor)))
+            $bg.css({
+                'margin-left': marginLeft
+            });
+    }
+
+    var pfx = ["webkit", "moz", "ms", "o", ""];
+    function RunPrefixMethod(obj, method) {
+
+        var p = 0, m, t;
+        while (p < pfx.length && !obj[m]) {
+            m = method;
+            if (pfx[p] == "") {
+                m = m.substr(0, 1).toLowerCase() + m.substr(1);
+            }
+            m = pfx[p] + m;
+            t = typeof obj[m];
+            if (t != "undefined") {
+                pfx = [pfx[p]];
+                return (t == "function" ? obj[m]() : obj[m]);
+            }
+            p++;
+        }
+
+    };
+    //$(document).on('swipeleft swiperight', '#RoulettegameWrapper', function (event) {
+
+    //    event.stopPropagation();
+    //    event.preventDefault();
+    //});
+    $(document).ready(function () {
+        $('#info').click(function () { alert("info"); });
+        $('#history').click(function () { alert("history"); });
+        //var e = document.getElementById("fullscreen");
+
+        //e.onclick = function () {
+
+        //    if (RunPrefixMethod(document, "FullScreen") || RunPrefixMethod(document, "IsFullScreen")) {
+        //        RunPrefixMethod(document, "CancelFullScreen");
+        //    }
+        //    else {
+        //        RunPrefixMethod(e, "RequestFullScreen");
+        //    }
+        //}
+    });
+
+    // open cashier
+    function openPopupUrl(type) {
+        @*if ('@Model.IsNewSite' == 1) {
+            if (type == 0) window.top.postMessage({ action: 'openSlider', tab: 'deposit' }, "*");
+            else window.top.postMessage({ action: 'openSlider', tab: 'balanceHistory' }, "*");
+            return;
+        }
+        var url = "";
+        if (type == 0) {
+            url = '@Model.DepositUrl';
+        } else {
+            url = '@Model.HistoryUrl';
+        }
+        url = url.trim();
+        if (url != "" && url != "undefined") {
+            var popupWindow = window.open(url, "", "height=600,width=1020,scrollbars=yes");
+        }*@
+    }
+
+    // open game statistics
+    function openStatistics() {
+        $("#statisticsHolder").load('@Url.Action("RouletteStatistics", "Home", new {type = 0})', function () {
+            $("#statisticsHolder").fadeIn(1000);
+        });
+    }
+</script>
